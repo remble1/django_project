@@ -20,5 +20,6 @@ from Product.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index), # gdy path == '' to wyrzuci nam index, ktory wyrzuca zawartosc bazy na strone
-    path('category/<id>/', category, name='category') # <id> to zmienna, a name='kat.. to odwolanie sie do funkcji w vivews
+    path('category/<id>/', category, name='category'), # <id> to zmienna, a name='kat.. to odwolanie sie do funkcji w vivews
+    path('product/<id>/', product, name='product'),
 ]
