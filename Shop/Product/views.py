@@ -9,4 +9,8 @@ def index(request): # pod odpytaniu wypluje cala zawartosc baz
     jeden = Product.objects.filter(kategoria=1)
     kat_name = Category.objects.get(id=2)
     kat_all = Category.objects.all()
-    return HttpResponse(kat_all)
+    return HttpResponse(jeden)
+
+def category(request, id):
+    category_user = Category.objects.get(pk=id)
+    return HttpResponse(category_user.nazwa)

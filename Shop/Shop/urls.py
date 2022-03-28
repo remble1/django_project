@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Product.views import index
+from Product.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index) # gdy path == '' to wyrzuci nam index, ktory wyrzuca zawartosc bazy na strone
+    path('', index), # gdy path == '' to wyrzuci nam index, ktory wyrzuca zawartosc bazy na strone
+    path('category/<id>/', category, name='category') # <id> to zmienna, a name='kat.. to odwolanie sie do funkcji w vivews
 ]
