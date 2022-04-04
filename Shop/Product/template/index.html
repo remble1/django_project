@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <h1> LOGO SKLEPU    WYSZUKIWARKA   INFO</h1>
+    </div>
+
+    <div style="clear:both" ></div>
+
+    <div style="width:200px; float:left" >
+        <h3> elo </h3>
+        {% for cat in category %}
+            <p><a href = "/category/{{ cat.id }}"> {{ cat.nazwa }} </a></p>
+        {% endfor %}
+    </div>
+    <div style="width:700px; float:left" >
+        {% block product %} {% endblock product %}
+    </div>
+    <div style="clear:both" ></div>
+
+</body>
+</html>

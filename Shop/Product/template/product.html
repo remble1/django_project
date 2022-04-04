@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+{% block product %}
+{% if product_user %}
+    <h1> {{ produkt_user.nazwa }} </h1>
+    <p> Producent: {{ product_user.producent }} </p>
+    <p> Opis: {{ product_user.opis }} </p>
+    <p> Cena: {{ product_user.cena }} </p>
+
+{% else %}
+    <p> Nie ma takiego produktu </p>
+{% endif %}
+{% endblock product %}
