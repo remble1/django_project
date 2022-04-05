@@ -14,7 +14,10 @@ def index(request): # pod odpytaniu wypluje cala zawartosc baz
 
 def category(request, id):
     category_user = Category.objects.get(pk=id)
-    category_product = Category.objects.filters(category = category_user)
+
+    category_product = Product.objects.filter(kategoria = category_user)
+
+
     category = Category.objects.all()
     dane = {'category_user' : category_user,
             'category_product' : category_product,
