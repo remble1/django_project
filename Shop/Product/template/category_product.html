@@ -1,12 +1,12 @@
 {% extends 'index.html' %}
 
 {% block product %}
-
+<h1>Wybierz produkt:</h1>
     {% if category_product %}
 
         {% for product in category_product %}
 
-            <p><a href = "/product/{{ product.id }}">{{ product.nazwa }} </a></p>
+            <p class="col"><a href = "/product/{{ product.id }}" class="text-decoration-none text-reset">{{ product.nazwa }} </a></p>
         {% endfor %}
 
     {% else %}
