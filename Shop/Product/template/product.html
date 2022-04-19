@@ -2,9 +2,25 @@
 
 {% block product %}
 {% if product_user %}
-    <h1> Produkt: {{ product_user.nazwa }} </h1>
+    <h1> {{ product_user.nazwa }} </h1>
     <p> Producent: {{ product_user.producent }} </p>
-    <p> Opis: {{ product_user.opis }} </p>
+    <div>
+    {% if product_user.id == 1  %}
+        <a> 
+            {% load static %}<img src="{% static 'images/custom.jpg' %}" class="img-thumbnail">
+        </a>
+    {% elif product_user.id == 2  %}
+        <a> 
+            {% load static %}<img src="{% static 'images/lidl.jpg' %}" class="img-thumbnail">
+        </a>
+    {% elif product_user.id == 3  %}
+        <a> 
+            {% load static %}<img src="{% static 'images/lemond.jpeg' %}" class="img-thumbnail">
+        </a> 
+    {% endif %}
+    </div>
+    <p>Opis:</p>
+    <p> {{ product_user.opis }} </p>
     <p> Cena: {{ product_user.cena }} </p>
 
 {% else %}
